@@ -6,4 +6,4 @@ const stream = fs.createReadStream(pathText, 'utf-8');
 let text="";
 stream.on('data', partData => text += partData);
 stream.on('error', error => console.log('Error', error.message))
-stream.on('end', ()=> console.log(text.trim()))
+stream.on('end', ()=> process.stdout.write(text.trim()))
