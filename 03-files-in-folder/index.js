@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const pathText = path.resolve('03-files-in-folder', 'secret-folder')
-console.log(pathText)
+
 fs.readdir(pathText,{withFileTypes:true},(err,files)=>{
     if(err) console.log(err)
     else{
