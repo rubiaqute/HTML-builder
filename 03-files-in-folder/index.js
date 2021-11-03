@@ -13,9 +13,9 @@ fs.readdir(pathText,{withFileTypes:true},(err,files)=>{
                     const fileExtract =  returnExtract(file).slice(1)
                     const fileName =   returnBasename(file)
                     fs.stat(path.resolve(pathText, file.name),  (error,stats)=>{
-                        const sizeF = stats.size/1024
+                        const sizeF = stats.size
                         
-                        console.log (fileName +" - "+fileExtract + " - " +sizeF +"kb")
+                        console.log (fileName +" - "+fileExtract + " - " +sizeF +"b")
                         
                      })
         }
