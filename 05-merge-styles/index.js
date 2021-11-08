@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-let stylesArray=[];
+
 const pathStyles = path.resolve('05-merge-styles', 'styles')
 const bundlePath = path.resolve('05-merge-styles', 'project-dist', 'bundle.css')
 fs.readdir(pathStyles,{withFileTypes:true},(err,files)=>{
@@ -17,7 +17,7 @@ fs.readdir(pathStyles,{withFileTypes:true},(err,files)=>{
         stream.on('data', partData => text += partData);
         stream.on('error', error => console.log('Error', error.message))
         stream.on('end', ()=> {
-            stylesArray.push(text.trim())
+            
             fs.open (bundlePath, 'w', (err) => {if (err) throw err} )
             fs.appendFile(bundlePath, text.trim(), function(){})
             
