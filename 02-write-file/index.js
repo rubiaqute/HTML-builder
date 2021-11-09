@@ -17,7 +17,7 @@ rl.question('My darling, tell me your secret? ', (answer) => {
     }
 });
 rl.on('line', (answer) =>{
-    if (answer.includes('exit'))  closeRl();
+    if (answer=='exit')  closeRl();
     else{
         fs.appendFile(pathText, answer +'\n', function(){})
     }
